@@ -147,7 +147,7 @@ a {
     padding: 0;
 }
 .twitter-link {
-    background-color: #5983dc;
+    background-color: #1794c5;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -156,7 +156,7 @@ a {
     );
 }
 .pinterest-link {
-    background-color: #ec7474;
+    background-color: #ce6363;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -165,7 +165,7 @@ a {
     );
 }
 .youtube-link {
-    background-color: #d20909;
+    background-color: #c51717;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -174,7 +174,7 @@ a {
     );
 }
 .github-link {
-    background-color: #38de61;
+    background-color: #4ec517;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
