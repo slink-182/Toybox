@@ -1,4 +1,4 @@
-# ToyboX
+# Toybox
 This repo stores my personal blogging website :)
 
 I have a love hate relationship with AI. 
