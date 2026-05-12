@@ -18,7 +18,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #2a2a53;
+    background-color: #192d1f;
     color: aliceblue;
  
 }
@@ -33,15 +33,18 @@ body {
     flex:1;
 }
 header {
-    background-color: #b1b1a4;
-    /* these two need to match for vertical height */
-    height: 160px;
-    line-height: 160px;
-    padding-left: 30px;
+    text-align: center;
+    padding-top: 32px;
+    /* background-color: white; */
 }    
+header img{
+    border-radius: 50%;
+    width: 112px;
+
+}
 
 footer {
-    background-color: #160801;
+    background-color: #000000;
     height: 160px;
     line-height: 160px;
     text-align: center;
@@ -50,6 +53,7 @@ footer {
 
 main p {
     padding: 12px 8px 0 8px;
+
 }
 
 /* this is where the meat of the websites gonna go. */
