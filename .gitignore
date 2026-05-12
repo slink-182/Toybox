@@ -1,0 +1,12 @@
+# Ignore editor-specific settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore temporary folders
+temp/
+dist/
