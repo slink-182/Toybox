@@ -1,8 +1,8 @@
 /* 
 hello ladies and gents this is the magical stylesheet thats gonna structure the style of my personal website. Btw fuck you<3
 Anyhoo ~ 
-
 */
+
 /* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
@@ -20,7 +20,6 @@ Anyhoo ~
     overflow: hidden;
     z-index: 9999;               /* stays on top */
 }
-
 .firefly {
     position: absolute;
     width: 6px;
@@ -30,14 +29,12 @@ Anyhoo ~
     opacity: 0.8;
     animation: drift 8s infinite ease-in-out;
 }
-
 @keyframes drift {
     0%   { transform: translate(0, 0); }
     50%  { transform: translate(40px, -60px); }
     100% { transform: translate(0, 0); }
 }
 /* BREAK */
-
 
 /* remove browser values on padding and margin */
 * {
@@ -88,19 +85,18 @@ header a {
     margin: 0 auto;
 
 }
-
-img {
-     -webkit-user-drag: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 16px; /* spacing between images */
+    padding: 16px;
     
 }
 
-footer {
-    background-color: #000000;
-    height: 160px;
-    line-height: 160px;
-    text-align: center;
-    /* margin-top: 20px; */
+img {
+    -webkit-user-drag: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 100%;
     
 }
 
@@ -152,6 +148,17 @@ a {
     margin-top: 40px;
 }
 
+/* footer */
+footer {
+    background-color: #000000;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    margin-top: 200px;
+    
+}
+
+
 /* media query chunk for phones<3 */
 @media (max-width: 600px) {
     main {
@@ -161,6 +168,10 @@ a {
         text-align: center;
         padding: 40px 0 0 0;
 
+    }
+    .image-grid {
+        padding: 0;
+        margin-bottom: 16px;
     }
 
 }
