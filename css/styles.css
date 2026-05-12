@@ -132,5 +132,15 @@ main ul {
     color: gray;
 }
 
+/* media query chunk for phones<3 */
+@media (max-width: 600px) {
+    body {
+        padding:0 4% 0 4%;
+    }
+    main h1, main h2, main h3 {
+        text-align: center;
+        padding: 40px 0 0 0;
 
+    }
 
+}
