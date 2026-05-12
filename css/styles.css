@@ -173,6 +173,15 @@ a {
         0 100%    /* bottom-left */
     );
 }
+.github-link {
+    background-color: #38de61;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+}
 
 /* footer */
 footer {
