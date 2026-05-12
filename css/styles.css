@@ -133,19 +133,45 @@ main ul {
 
 }
 .links a {
-    margin: 0 8px 0 8px;
+    padding: 0 32px 0 32px;
     color: aliceblue;
     text-decoration: none;
 }
-
 
 a {
     font-family: "Bungee", sans-serif;
 }
 .link-header {
     text-align: center;
+    margin: 40px 0 16px 0;
     padding: 0;
-    margin-top: 40px;
+}
+.twitter-link {
+    background-color: #5983dc;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+}
+.pinterest-link {
+    background-color: #ec7474;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+}
+.youtube-link {
+    background-color: #d20909;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
 }
 
 /* footer */
@@ -154,10 +180,12 @@ footer {
     height: 160px;
     line-height: 160px;
     text-align: center;
-    margin-top: 200px;
-    
+    margin-top: 80px;
 }
-
+footer p {
+    font-family: "Bungee", sans-serif;
+    color:gray;
+}
 
 /* media query chunk for phones<3 */
 @media (max-width: 600px) {
