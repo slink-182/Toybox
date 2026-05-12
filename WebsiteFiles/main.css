@@ -1,0 +1,76 @@
+/* 
+hello ladies and gents this is the magical stylesheet thats gonna structure the style of my personal website. Btw fuck you<3
+Anyhoo ~ 
+
+*/
+
+/* GENERAL STYLES */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    min-height:100%;
+    margin:0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a53;
+    color: aliceblue;
+ 
+}
+
+.page {
+    min-height: 100%;
+    max-width: 800px;
+    margin:0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+header {
+    background-color: #b1b1a4;
+    /* these two need to match for vertical height */
+    height: 160px;
+    line-height: 160px;
+    padding-left: 30px;
+}    
+
+footer {
+    background-color: #160801;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    
+}
+
+main p {
+    padding: 12px 8px 0 8px;
+}
+
+/* this is where the meat of the websites gonna go. */
+main h1 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+main h2, main h3 {
+    padding: 40px 0 0 60px; /* top, right, bottom, left*/
+
+}
+main {
+    flex:1;
+    padding-bottom:160px;
+}
+
+main ul {
+    padding-left: 60px;
+}
+
+
+
+
