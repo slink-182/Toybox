@@ -63,17 +63,20 @@ body {
     flex:1;
 }
 header {
+    display: flex;
     background-color: black;
-    height: 40px;
+
+    /* vertically center text and header size*/
     line-height: 40px;
-    padding: 0 8px 0 8px;
     margin-bottom: 40px;
-    text-align: center;
+    
     
 }
 header a {
     color: white;
     font-weight: 400px;
+    margin-right: 8px;
+    padding: 0 8px 0 8px;
     text-decoration: none;
     
 }    
@@ -148,6 +151,7 @@ a {
 }
 .twitter-link {
     background-color: #1794c5;
+    transition: padding 0.25s ease;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -157,6 +161,7 @@ a {
 }
 .pinterest-link {
     background-color: #ce6363;
+    transition: padding 0.25s ease;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -166,6 +171,7 @@ a {
 }
 .youtube-link {
     background-color: #c51717;
+    transition: padding 0.25s ease;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -175,12 +181,40 @@ a {
 }
 .github-link {
     background-color: #4ec517;
+    transition: padding 0.25s ease;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
         85% 100%,/* bottom-right */
         0 100%    /* bottom-left */
     );
+}
+
+/* hover styles */
+header a:hover {
+    background-color: white;
+    color: black;
+}
+.youtube-link:hover {
+    background-color: white;
+    color: black;
+    /* 32px standard padding on sides */
+    padding-right: 64px;
+}
+.pinterest-link:hover {
+    background-color: white;
+    color: black;
+    padding-right: 64px;
+}
+.twitter-link:hover {
+    background-color: white;
+    color: black;
+    padding-right: 64px;
+}
+.github-link:hover {
+    background-color: white;
+    color: black;
+    padding-right: 64px;
 }
 
 /* footer */
