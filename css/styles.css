@@ -68,7 +68,7 @@ header {
 
     /* vertically center text and header size*/
     line-height: 40px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     
     
 }
@@ -81,11 +81,13 @@ header a {
     
 }    
 
+/* image on the front of index.html */
 .home-image {
     border-radius: 50%;
     width: 112px;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* horizontally center*/
+    margin-top:40px; /* add margin between the image on index.html and the header/nav */
 
 }
 .image-grid {
@@ -229,6 +231,28 @@ footer p {
     font-family: "Bungee", sans-serif;
     color:gray;
 }
+
+/* page two */
+.page-two {
+    background: linear-gradient(180deg, #33532a, #160801);
+}
+
+.h1-luigi {
+    margin-bottom: 16px;
+}
+.luigi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 16px; /* spacing between items */
+    padding: 16px;
+}
+.luigi-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* optional: keeps images nicely framed */
+    border-radius: 6px; /* optional */
+}
+
 
 /* media query chunk for phones<3 */
 @media (max-width: 600px) {
