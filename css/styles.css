@@ -44,15 +44,23 @@ Anyhoo ~
 /* increase overall font size */
 html {
     font-size: 20px;
+
 }
 
 body {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, #2a2a53, #160801);
     color: aliceblue;
- 
+    background: none;
+    background: linear-gradient(180deg, #2a2a53, #160801);
+    
 }
+
+body.grayscale {
+    background: linear-gradient(180deg, #404040, #000000);
+    
+}
+
 .page {
     min-height: 100%;
     max-width: 800px;
@@ -88,7 +96,16 @@ header a {
     display: block;
     margin: 0 auto; /* horizontally center*/
     margin-top:40px; /* add margin between the image on index.html and the header/nav */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    cursor: pointer;
+   
 
+}
+.home-image.roll-away {
+    transform: translateX(100%) rotate(720deg);
+    opacity: 0; /* optional fade-out */
+    pointer-events: none;
+    
 }
 .image-grid {
     display: grid;
