@@ -1,4 +1,6 @@
 /* This is the CSS for Toybox!  */
+/* GENERAL STYLES FOR ALL PAGES */
+
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
@@ -8,8 +10,6 @@
   font-style: normal;
 }
 
-
-/* MISC */
 * {
     padding: 0;
     margin: 0; 
@@ -17,26 +17,27 @@
 html {
     font-size: 20px;
     scroll-behavior: smooth;
-} 
-
-
-/* BODY */
+}
 body {
     color: aliceblue;
     background: linear-gradient(180deg, #2a2a53, #160801); 
+    max-width: 800px;
+    margin: 0 auto;
 }
 body.grayscale {
     background: linear-gradient(180deg, #404040, #000000);
 }
-
+.two-body {
+    background: linear-gradient(180deg, #33532a, #160801);
+}
 
 /* FIREFLIES */
 #fireflies {
-    pointer-events: none;        /* so users can still click your site */
+    pointer-events: none;
     position: fixed;
     inset: 0;
     overflow: hidden;
-    z-index: 9999;               /* stays on top */
+    z-index: 9999;
 }
 .firefly {
     position: absolute;
@@ -53,60 +54,87 @@ body.grayscale {
     100% { transform: translate(0, 0); }
 }
 
-
-.page-index {
-    max-width: 800px;
-    margin: 0 auto; 
-} 
-.page-one {
-    max-width: 800px;
-    margin: 0 auto; 
-}
-.page-two {
-    max-width: 800px;
-    margin: 0 auto; 
-    background: linear-gradient(180deg, #33532a, #160801);
-}
-
-
-/* HEADER */
-header {
+/* NAVIGATION */
+nav {
     display: flex;
     line-height: 40px;
     background-color: black;    
 }
-header a {
-    color: white;
+nav a {
     margin-right: 8px;
     padding: 0 8px 0 8px;
+}
+nav a:hover {
+    background-color: white;
+    color: black;
+}
+a {
+    font-family: "Bungee", sans-serif;
     text-decoration: none;
+    color: aliceblue;
 }
-
-
-/* MAIN */
-main {
-    flex:1;
-}
-main h1 {
+img {
+    -webkit-user-drag: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 100%;
+} 
+ul {
+    list-style-type: none;
     text-align: center;
-    padding-top: 40px;
+}
+li {
+    padding-bottom: 8px;
+}
+h1 {
+    text-align: center;
+}
+h1, h2, h3 h4, h5 {
     font-family: "Bungee", sans-serif;
-    
+    margin: 12px 0;
 }
-main h2, main h3 {
-    padding: 40px 0 0 8px; /* top, right, bottom, left*/
-    font-family: "Bungee", sans-serif;
-}
-main p {
-    padding: 12px 8px 0 8px;
-}
-main ul {
-    padding-left: 60px;
-}
-.h1-luigi {
-    margin-bottom: 16px;
+p {
+    margin: 16px;
 }
 
+/* SOCIAL */
+.social {
+    padding: 0 8px 0 8px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+}
+.social a {
+    padding: 0 32px 0 32px;
+    transition: padding 0.25s ease;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+}
+.social a:hover {
+    background-color: white;
+    color: black;
+    padding-right: 64px;
+}
+.social-h2 {
+    text-align: center;
+    margin: 40px 0 16px 0;
+    padding: 0;
+}
+.twitter {
+    background-color: #1794c5;
+}
+.pinterest {
+    background-color: #ce6363;
+}
+.youtube {
+    background-color: #c51717;
+}
+.github {
+    background-color: #4ec517;   
+}
 
 /* FOOTER */
 footer {
@@ -121,156 +149,70 @@ footer p {
     color:gray;
 }
 
-/* IMG */
-img {
-    -webkit-user-drag: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    width: 100%;
+/* REPEAT FORMATS */
+.four-column {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 16px;
 }
-
-.image-grid {
+.three-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px;
+}
+.two-column {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 16px;
+    margin: 16px;
+}
+.one-column {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin: 16px;
 }
 
-.home-image {
+.box {
+    margin: 16px; 
+}
+
+.img-circle {
+    border-radius: 50%;
+    margin: 16px;
+}
+.text-center {
+    text-align: center;
+}
+
+.text-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+ /* UNIQUE ID/CLASSES */
+#home-image {
     border-radius: 50%;
     width: 112px;
     display: block;
-    margin: 0 auto;
-    margin-top:40px;
+    margin: 40px auto;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     cursor: pointer;
 }
-
-.home-image.roll-away {
+#home-image.roll-away {
     transform: translateX(100%) rotate(720deg);
     opacity: 0;
     pointer-events: none;
 }
-.luigi-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; 
-    border-radius: 6px; 
-}
-.luigi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 16px;
-}
 
 
-/* LINKS */
-a {
-    font-family: "Bungee", sans-serif;
-}
-
-.links {
-    padding: 0 8px 0 8px;
-    height:40px;
-    line-height: 40px;
-    text-align: center;
-
-}
-
-.links a {
-    padding: 0 32px 0 32px;
-    color: aliceblue;
-    text-decoration: none;
-}
-
-.link-header {
-    text-align: center;
-    margin: 40px 0 16px 0;
-    padding: 0;
-}
-
-.twitter-link {
-    background-color: #1794c5;
-    transition: padding 0.25s ease;
-    clip-path: polygon(
-        15% 0,    /* top-left pulled inward */
-        100% 0,   /* top-right */
-        85% 100%,/* bottom-right */
-        0 100%    /* bottom-left */
-    );
-}
-.pinterest-link {
-    background-color: #ce6363;
-    transition: padding 0.25s ease;
-    clip-path: polygon(
-        15% 0,    /* top-left pulled inward */
-        100% 0,   /* top-right */
-        85% 100%,/* bottom-right */
-        0 100%    /* bottom-left */
-    );
-}
-.youtube-link {
-    background-color: #c51717;
-    transition: padding 0.25s ease;
-    clip-path: polygon(
-        15% 0,    /* top-left pulled inward */
-        100% 0,   /* top-right */
-        85% 100%,/* bottom-right */
-        0 100%    /* bottom-left */
-    );
-}
-.github-link {
-    background-color: #4ec517;
-    transition: padding 0.25s ease;
-    clip-path: polygon(
-        15% 0,    /* top-left pulled inward */
-        100% 0,   /* top-right */
-        85% 100%,/* bottom-right */
-        0 100%    /* bottom-left */
-    );
-}
-
-
-/* hover styles */
-header a:hover {
-    background-color: white;
-    color: black;
-}
-.youtube-link:hover {
-    background-color: white;
-    color: black;
-    padding-right: 64px;
-}
-.pinterest-link:hover {
-    background-color: white;
-    color: black;
-    padding-right: 64px;
-}
-.twitter-link:hover {
-    background-color: white;
-    color: black;
-    padding-right: 64px;
-}
-.github-link:hover {
-    background-color: white;
-    color: black;
-    padding-right: 64px;
-}
-
-
-/* media query chunk for phones<3 */
+/* MEDIA QUERIES */
 @media (max-width: 600px) {
-    main {
-        padding:0 4% 0 4%;
-    }
-    main h1, main h2, main h3 {
+    h1, h2 {
         text-align: center;
-        padding: 40px 0 0 0;
-
-    }
-    .image-grid {
-        padding: 0;
-        margin-bottom: 16px;
     }
 
 }

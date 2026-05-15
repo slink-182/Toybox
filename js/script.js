@@ -16,20 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(f);
     }
 
-    // click index home image for sad music
+    // 2. Click interaction
     const pop = new Audio("assets/audio/2sad4me.mp3");
+    const homeImg = document.getElementById("home-image");
 
-    document.querySelectorAll(".home-image").forEach(img => {
-        img.addEventListener("click", () => {
-            // play sound
+    if (homeImg) {
+        homeImg.addEventListener("click", () => {
             pop.currentTime = 0;
-            pop.play();
-
-            // roll away - adds the class to trigger the CSS transition
-            img.classList.add("roll-away");
-
-            // grayscale background - changed from documentElement to body
+            pop.play().catch(e => console.error("Audio playback failed:", e));
+            homeImg.classList.add("roll-away");
             document.body.classList.add("grayscale");
         });
-    });
+    }
 });
