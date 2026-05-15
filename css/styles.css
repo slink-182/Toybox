@@ -12,7 +12,7 @@ Anyhoo ~
   font-style: normal;
 }
 
-/* firefly experiment */
+/* FIREFLIES */
 #fireflies {
     pointer-events: none;        /* so users can still click your site */
     position: fixed;
@@ -34,117 +34,134 @@ Anyhoo ~
     50%  { transform: translate(40px, -60px); }
     100% { transform: translate(0, 0); }
 }
-/* BREAK */
 
-/* remove browser values on padding and margin */
+/* MISC */
 * {
     padding: 0;
-    margin: 0;
+    margin: 0; 
 }
-/* increase overall font size */
 html {
     font-size: 20px;
+    scroll-behavior: smooth;
+} 
 
-}
 
+/* BODY */
 body {
-    display: flex;
-    flex-direction: column;
     color: aliceblue;
-    background: none;
-    background: linear-gradient(180deg, #2a2a53, #160801);
-    
+    background: linear-gradient(180deg, #2a2a53, #160801); 
 }
-
 body.grayscale {
     background: linear-gradient(180deg, #404040, #000000);
-    
 }
 
 .page {
-    min-height: 100%;
     max-width: 800px;
-    margin:0 auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex:1;
+    margin: 0 auto; 
+} 
+.page-two {
+    background: linear-gradient(180deg, #33532a, #160801);
 }
+
+
+/* HEADER */
 header {
     display: flex;
-    background-color: black;
-
-    /* vertically center text and header size*/
     line-height: 40px;
-    /* margin-bottom: 40px; */
-    
-    
+    background-color: black;    
 }
 header a {
     color: white;
-    font-weight: 400px;
     margin-right: 8px;
     padding: 0 8px 0 8px;
     text-decoration: none;
-    
-}    
-
-/* image on the front of index.html */
-.home-image {
-    border-radius: 50%;
-    width: 112px;
-    display: block;
-    margin: 0 auto; /* horizontally center*/
-    margin-top:40px; /* add margin between the image on index.html and the header/nav */
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    cursor: pointer;
-   
-
-}
-.home-image.roll-away {
-    transform: translateX(100%) rotate(720deg);
-    opacity: 0; /* optional fade-out */
-    pointer-events: none;
-    
-}
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 16px; /* spacing between images */
-    padding: 16px;
-    
 }
 
-img {
-    -webkit-user-drag: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    width: 100%;
-    
+
+/* MAIN */
+main {
+    flex:1;
 }
-
-main p {
-    padding: 12px 8px 0 8px;
-
-}
-
-/* this is where the meat of the websites gonna go. */
 main h1 {
     text-align: center;
     padding-top: 40px;
     font-family: "Bungee", sans-serif;
     
 }
-
 main h2, main h3 {
     padding: 40px 0 0 8px; /* top, right, bottom, left*/
     font-family: "Bungee", sans-serif;
 }
-main {
-    flex:1;
+main p {
+    padding: 12px 8px 0 8px;
 }
-
 main ul {
     padding-left: 60px;
+}
+.h1-luigi {
+    margin-bottom: 16px;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #000000;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    margin-top: 80px;
+}
+footer p {
+    font-family: "Bungee", sans-serif;
+    color:gray;
+}
+
+/* IMG */
+img {
+    -webkit-user-drag: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 100%;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+.home-image {
+    border-radius: 50%;
+    width: 112px;
+    display: block;
+    margin: 0 auto;
+    margin-top:40px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    cursor: pointer;
+}
+
+.home-image.roll-away {
+    transform: translateX(100%) rotate(720deg);
+    opacity: 0;
+    pointer-events: none;
+}
+.luigi-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    border-radius: 6px; 
+}
+.luigi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+
+/* LINKS */
+a {
+    font-family: "Bungee", sans-serif;
 }
 
 .links {
@@ -154,20 +171,19 @@ main ul {
     text-align: center;
 
 }
+
 .links a {
     padding: 0 32px 0 32px;
     color: aliceblue;
     text-decoration: none;
 }
 
-a {
-    font-family: "Bungee", sans-serif;
-}
 .link-header {
     text-align: center;
     margin: 40px 0 16px 0;
     padding: 0;
 }
+
 .twitter-link {
     background-color: #1794c5;
     transition: padding 0.25s ease;
@@ -209,6 +225,7 @@ a {
     );
 }
 
+
 /* hover styles */
 header a:hover {
     background-color: white;
@@ -217,7 +234,6 @@ header a:hover {
 .youtube-link:hover {
     background-color: white;
     color: black;
-    /* 32px standard padding on sides */
     padding-right: 64px;
 }
 .pinterest-link:hover {
@@ -234,40 +250,6 @@ header a:hover {
     background-color: white;
     color: black;
     padding-right: 64px;
-}
-
-/* footer */
-footer {
-    background-color: #000000;
-    height: 160px;
-    line-height: 160px;
-    text-align: center;
-    margin-top: 80px;
-}
-footer p {
-    font-family: "Bungee", sans-serif;
-    color:gray;
-}
-
-/* page two */
-.page-two {
-    background: linear-gradient(180deg, #33532a, #160801);
-}
-
-.h1-luigi {
-    margin-bottom: 16px;
-}
-.luigi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-    gap: 16px; /* spacing between items */
-    padding: 16px;
-}
-.luigi-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* optional: keeps images nicely framed */
-    border-radius: 6px; /* optional */
 }
 
 
