@@ -1,9 +1,5 @@
-/* 
-hello ladies and gents this is the magical stylesheet thats gonna structure the style of my personal website. Btw fuck you<3
-Anyhoo ~ 
-*/
-
-/* import fonts */
+/* This is the CSS for Toybox!  */
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 .bungee-regular {
@@ -11,6 +7,28 @@ Anyhoo ~
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* MISC */
+* {
+    padding: 0;
+    margin: 0; 
+}
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+} 
+
+
+/* BODY */
+body {
+    color: aliceblue;
+    background: linear-gradient(180deg, #2a2a53, #160801); 
+}
+body.grayscale {
+    background: linear-gradient(180deg, #404040, #000000);
+}
+
 
 /* FIREFLIES */
 #fireflies {
@@ -35,31 +53,18 @@ Anyhoo ~
     100% { transform: translate(0, 0); }
 }
 
-/* MISC */
-* {
-    padding: 0;
-    margin: 0; 
-}
-html {
-    font-size: 20px;
-    scroll-behavior: smooth;
-} 
 
-
-/* BODY */
-body {
-    color: aliceblue;
-    background: linear-gradient(180deg, #2a2a53, #160801); 
-}
-body.grayscale {
-    background: linear-gradient(180deg, #404040, #000000);
-}
-
-.page {
+.page-index {
     max-width: 800px;
     margin: 0 auto; 
 } 
+.page-one {
+    max-width: 800px;
+    margin: 0 auto; 
+}
 .page-two {
+    max-width: 800px;
+    margin: 0 auto; 
     background: linear-gradient(180deg, #33532a, #160801);
 }
 
