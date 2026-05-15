@@ -61,10 +61,27 @@ nav {
     background-color: black;    
 }
 nav a {
-    margin-right: 8px;
-    padding: 0 8px 0 8px;
+    padding:0 20px;
+    transition: all 0.25s;
+    clip-path: polygon(
+        15% 0,    /* top-left pulled inward */
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+}
+
+nav a:nth-child(1) {
+    clip-path: polygon(
+        0 0, 
+        100% 0,   /* top-right */
+        85% 100%,/* bottom-right */
+        0 100%    /* bottom-left */
+    );
+
 }
 nav a:hover {
+    padding-right: 40px;
     background-color: white;
     color: black;
 }
@@ -98,13 +115,13 @@ p {
 
 /* SOCIAL */
 .social {
-    padding: 0 8px 0 8px;
+    padding: 0 8px;
     height:40px;
     line-height: 40px;
     text-align: center;
 }
 .social a {
-    padding: 0 32px 0 32px;
+    padding: 0 32px;
     transition: padding 0.25s ease;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
