@@ -3,7 +3,7 @@
 // FIREFLIES ACROSS THE PAGE
 document.addEventListener("DOMContentLoaded", () => {
 
-    const container = document.getElementById("fireflies");
+    const fireflies = document.getElementById("fireflies");
     const count = 20;
 
     for (let i = 0; i < count; i++) {
@@ -15,19 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
         f.style.animationDuration = 6 + Math.random() * 6 + "s";
         f.style.animationDelay = Math.random() * 5 + "s";
 
-        container.appendChild(f);
+        fireflies.appendChild(f);
     }
 
 
 // HOME IMAGE ROLL AWAY WITH SAD MUSIC AND GRAYSCALE
-    const pop = new Audio("assets/audio/2sad4me.mp3");
-    const homeImg = document.getElementById("home-image");
+    const sad_mp3 = new Audio("assets/audio/2sad4me.mp3");
+    const home_image = document.getElementById("home-image");
 
-    if (homeImg) {
-        homeImg.addEventListener("click", () => {
-            pop.currentTime = 0;
-            pop.play().catch(e => console.error("Audio playback failed:", e));
-            homeImg.classList.add("roll-away");
+    if (home_image) {
+        home_image.addEventListener("click", () => {
+            sad_mp3.currentTime = 0;
+            sad_mp3.play().catch(e => console.error("Audio playback failed:", e));
+            home_image.classList.add("roll-away");
             document.body.classList.add("grayscale");
         });
     }
@@ -43,3 +43,6 @@ pomni_img.addEventListener("click", () => {
     fnaf_honk.play();
 
 });
+
+
+
