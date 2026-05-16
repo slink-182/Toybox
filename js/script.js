@@ -1,4 +1,6 @@
-// firefly effect over whole page
+
+
+// FIREFLIES ACROSS THE PAGE
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById("fireflies");
@@ -16,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(f);
     }
 
-    // 2. Click interaction
+
+// HOME IMAGE ROLL AWAY WITH SAD MUSIC AND GRAYSCALE
     const pop = new Audio("assets/audio/2sad4me.mp3");
     const homeImg = document.getElementById("home-image");
 
@@ -28,4 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("grayscale");
         });
     }
+});
+
+
+// CLICK POMNI FOR HONK-ACTION
+const fnaf_honk = new Audio("assets/audio/fnaf-honk.mp3")
+const pomni_img = document.getElementById("pomni-img");
+
+pomni_img.addEventListener("click", () => {
+    fnaf_honk.currentTime = 0;
+    fnaf_honk.play();
+
 });
