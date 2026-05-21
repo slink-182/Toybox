@@ -177,6 +177,7 @@ footer p {
     font-family: "Bungee", sans-serif;
 }
 
+
 /* REPEAT FORMATS */
 .four-column {
     display: grid;
@@ -229,7 +230,7 @@ footer p {
 }
 
 
- /* UNIQUE ID/CLASSES */
+ /* UNIQUE IDs */
 #home-image {
     border-radius: 50%;
     width: 112px;
@@ -243,7 +244,12 @@ footer p {
     opacity: 0;
     pointer-events: none;
 }
-
+#left-movie-chunk {
+    text-align: right;
+}
+#right-movie-chunk {
+    text-align:left;
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
