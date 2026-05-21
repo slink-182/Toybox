@@ -10,6 +10,18 @@
   font-style: normal;
 }
 
+:root {
+    --primary-background: linear-gradient(180deg, #193222, #1b1932);
+    --nav-background: black;
+    --footer-background: black;
+    --grayscale-background: linear-gradient(180deg, #404040, #000000);
+    --firefly-background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
+    --text-bubble-background: #56250d;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --header-font: "Bungee", sans-serif;
+    --primary-text-color: aliceblue;
+}
+
 * {
     padding: 0;
     margin: 0; 
@@ -19,13 +31,20 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: aliceblue;
-    /* background: linear-gradient(180deg, #2a2a53, #160801); original blue to dark red (sunset style) */
-    background: linear-gradient(180deg, #193222, #1b1932); 
-    
+    color: var(--primary-text-color);
+    background: var(--primary-background);
 }
+
+
+/* js applied classes */
 body.grayscale {
-    background: linear-gradient(180deg, #404040, #000000);
+    background: var(--grayscale-background);
+}
+.text-bubble.grayscale-text {
+    background-color: #5c5c5c;
+}
+.social a.grayscale-socials {
+    background-color: #898989;
 }
 
 
@@ -41,7 +60,7 @@ body.grayscale {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
+    background: var(--firefly-background);
     border-radius: 50%;
     opacity: 0.8;
     animation: drift 8s infinite ease-in-out;
@@ -56,13 +75,11 @@ body.grayscale {
 nav {
     display: flex;
     line-height: 40px;
-    background-color: black;    
+    background-color: var(--nav-background);
 }
 nav a {
     padding:0 20px;
-
-    margin:0 -6px;
-
+    margin:0 -4px;
     transition: all 0.25s;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
@@ -75,38 +92,40 @@ nav a:nth-child(1) {
     clip-path: polygon(
         0 0, 
         100% 0,   /* top-right */
-        90% 100%,/* bottom-right */
+        95% 100%,/* bottom-right */
         0 100%    /* bottom-left */
         );
 
 }
 
 nav a:hover {
-    background-color: white;
+    background-color: aliceblue;
     color: black;
 }
 main {
     max-width: 800px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 h1, h2, h3, h4, h5 {
-    font-family: "Bungee", sans-serif;
+    font-family: var(--header-font);
     margin: 12px 0;
 }
 
 .break {
-    border-bottom: 4px solid aliceblue;
+    border-bottom: 4px solid var(--primary-text-color);
     margin: 32px 0;
 }
 
 a {
-    font-family: "Bungee", sans-serif;
+    font-family: var(--header-font);
+    color: var(--primary-text-color);
     text-decoration: none;
-    color: aliceblue;
 }
 img {
     -webkit-user-drag: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); */
+    box-shadow: var(--box-shadow);
     width: 100%;
 } 
 ul {
@@ -122,13 +141,13 @@ h1 {
 
 p {
     margin: 16px;
-    color:aliceblue;
+    color: var(--primary-text-color);
 }
 
 /* SOCIAL */
 .social {
     padding: 0 8px;
-    height:40px;
+    margin-bottom: 16px;
     line-height: 40px;
     text-align: center;
 }
@@ -167,14 +186,13 @@ p {
 
 /* FOOTER */
 footer {
-    background-color: black;
+    background-color: var(--footer-background);
     height: 200px;
     line-height: 200px;
     text-align: center;
-    margin-top: 80px;
 }
 footer p {
-    font-family: "Bungee", sans-serif;
+    font-family: var(--header-font)
 }
 
 
@@ -207,7 +225,6 @@ footer p {
 .discography {
     margin-left: 16px;
 }
-
 .discography img {
     width: 120px;
     margin-right: -80px;
@@ -221,6 +238,8 @@ footer p {
     border-radius: 50%;
     margin: 16px;
 }
+
+/* typically text specific formats */
 .text-center {
     text-align: center;
 }
@@ -228,16 +247,23 @@ footer p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+.text-bubble {
+    background-color: var(--text-bubble-background);
+    padding: 16px;
+    margin: 8px;
+    border-radius:3%;  
+    border: 4px solid aliceblue; 
+}
 
 
  /* UNIQUE IDs */
 #home-image {
-    border-radius: 50%;
-    width: 112px;
     display: block;
-    margin: 40px auto;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     cursor: pointer;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    width: 112px;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 #home-image.roll-away {
     transform: translateX(100%) rotate(720deg);
@@ -253,8 +279,14 @@ footer p {
 
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
+    /* center all the header text when screens are small */
     h1, h2, h3, h4, h5 {
         text-align: center;
     }
+    /* despite being a 2 col class, columns are broke up to 1 because of how small the screen is */
+    .text-2col {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
 
 }

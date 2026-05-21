@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // HOME IMAGE ROLL AWAY WITH SAD MUSIC AND GRAYSCALE
     const sad_mp3 = new Audio("assets/audio/2sad4me.mp3");
     const home_image = document.getElementById("home-image");
+    const text_bubbles = document.querySelectorAll(".text-bubble");
+    const social_a = document.querySelectorAll(".social a")
 
     if (home_image) {
         home_image.addEventListener("click", () => {
@@ -29,6 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
             sad_mp3.play().catch(e => console.error("Audio playback failed:", e));
             home_image.classList.add("roll-away");
             document.body.classList.add("grayscale");
+
+            text_bubbles.forEach(bubble => {
+                bubble.classList.add("grayscale-text");
+            });
+            social_a.forEach(a => {
+                a.classList.add("grayscale-socials")
+            })
+
         });
     }
 });
