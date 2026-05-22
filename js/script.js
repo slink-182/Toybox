@@ -71,9 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // HOME IMAGE ROLL AWAY WITH SAD MUSIC AND GRAYSCALE
     const sad_mp3 = new Audio("assets/audio/2sad4me.mp3");
     const home_image = document.getElementById("home-image");
+    const firefly_class = document.querySelectorAll(".firefly");
     const text_bubbles = document.querySelectorAll(".text-bubble");
     const social_a = document.querySelectorAll(".social a")
     const selected_pages = document.querySelectorAll(".selected-page");
+
 
     if (home_image) {
         home_image.addEventListener("click", () => {
@@ -84,6 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
             sad_mp3.currentTime = 0;
             sad_mp3.play().catch(e => console.error("Audio playback failed:", e));
 
+            firefly_class.forEach(i => {
+                i.classList.add("grayscale-firefly");
+            });
             text_bubbles.forEach(i => {
                 i.classList.add("grayscale-text");
             });

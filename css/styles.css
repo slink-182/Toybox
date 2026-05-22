@@ -14,6 +14,7 @@
     --primary-background: linear-gradient(180deg, #193222, #1b1932);
     --grayscale-background: linear-gradient(180deg, #404040, #000000);
     --firefly-background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
+    --grayscale-firefly-background: radial-gradient(circle, #ffffff, #dcdcdc 40%, transparent 70%);
     --scrollbar-thumb-color: linear-gradient(180deg, #842525, #844925);
     --grayscale-scrollbar-thumb: linear-gradient(180deg, #7e7e7e, #8f8e8e);
     --nav-background: black;
@@ -59,6 +60,9 @@ body.grayscale-scrollbar-thumb::-webkit-scrollbar-thumb {
 .selected-page.grayscale-selected:hover {
     border-bottom: 2px solid #797979;
     color: black;
+}
+.firefly.grayscale-firefly {
+    background: var(--grayscale-firefly-background);
 }
 
 
