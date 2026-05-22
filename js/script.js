@@ -3,20 +3,69 @@
 // FIREFLIES ACROSS THE PAGE
 document.addEventListener("DOMContentLoaded", () => {
 
-    const fireflies = document.getElementById("fireflies");
+    const container = document.getElementById("fireflies");
     const count = 20;
 
-    for (let i = 0; i < count; i++) {
-        const f = document.createElement("div");
-        f.classList.add("firefly");
+    const fireflies = [];
 
-        f.style.left = Math.random() * 100 + "vw";
-        f.style.top = Math.random() * 100 + "vh";
-        f.style.animationDuration = 6 + Math.random() * 6 + "s";
-        f.style.animationDelay = Math.random() * 5 + "s";
+    const rect = () => container.getBoundingClientRect();
 
-        fireflies.appendChild(f);
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
     }
+
+    // create fireflies
+    for (let i = 0; i < count; i++) {
+
+        const el = document.createElement("div");
+        el.classList.add("firefly");
+        container.appendChild(el);
+
+        fireflies.push({
+            el,
+            x: random(0, rect().width),
+            y: random(0, rect().height),
+            vx: random(-0.5, 0.5),
+            vy: random(-0.5, 0.5)
+        });
+    }
+
+    function update() {
+
+        const bounds = rect();
+
+        for (const f of fireflies) {
+
+            // slight random drift (gives "alive" feel)
+            f.vx += random(-0.05, 0.05);
+            f.vy += random(-0.05, 0.05);
+
+            // clamp speed
+            const speedLimit = 1.2;
+            const speed = Math.hypot(f.vx, f.vy);
+
+            if (speed > speedLimit) {
+                f.vx = (f.vx / speed) * speedLimit;
+                f.vy = (f.vy / speed) * speedLimit;
+            }
+
+            f.x += f.vx;
+            f.y += f.vy;
+
+            // wrap edges (keeps them inside main)
+            if (f.x < 0) f.x = bounds.width;
+            if (f.x > bounds.width) f.x = 0;
+
+            if (f.y < 0) f.y = bounds.height;
+            if (f.y > bounds.height) f.y = 0;
+
+            f.el.style.transform = `translate(${f.x}px, ${f.y}px)`;
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    update();
 
 
     // HOME IMAGE ROLL AWAY WITH SAD MUSIC AND GRAYSCALE

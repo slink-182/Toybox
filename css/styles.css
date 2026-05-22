@@ -64,12 +64,12 @@ body.grayscale-scrollbar-thumb::-webkit-scrollbar-thumb {
 
 /* FIREFLIES */
 #fireflies {
+    position: absolute;
+    inset:0;
     pointer-events: none;
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: 9999;
+    overflow: hidden;   
 }
+
 .firefly {
     position: absolute;
     width: 6px;
@@ -77,13 +77,8 @@ body.grayscale-scrollbar-thumb::-webkit-scrollbar-thumb {
     background: var(--firefly-background);
     border-radius: 50%;
     opacity: 0.8;
-    animation: drift 8s infinite ease-in-out;
 }
-@keyframes drift {
-    0%   { transform: translate(0, 0); }
-    50%  { transform: translate(40px, -60px); }
-    100% { transform: translate(0, 0); }
-}
+
 
 /* NAVIGATION */
 nav {
@@ -302,6 +297,9 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
     pointer-events: none;
 }
+#sad-message {
+    margin-top:-56px; 
+}
 #ramona-img {
     cursor: pointer;
 }
@@ -309,6 +307,8 @@ body::-webkit-scrollbar-thumb {
 
 /* MAIN */
 main {
+    position:relative;
+    overflow:hidden;
     max-width: 800px;
     margin: 0 auto;
 }
