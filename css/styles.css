@@ -312,7 +312,6 @@ body::-webkit-scrollbar-thumb {
 /* MAIN */
 main {
     position:relative;
-    overflow:hidden;
     max-width: 800px;
     margin: 0 auto;
 }
