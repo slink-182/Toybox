@@ -81,7 +81,7 @@ nav {
 nav a {
     padding:0 20px;
     margin:0 -4px;
-    transition: all 0.25s;
+    transition: all .20s;
     clip-path: polygon(
         15% 0,    /* top-left pulled inward */
         100% 0,   /* top-right */
@@ -103,7 +103,8 @@ nav a:hover {
     color: black;
 }
 .selected-page {
-    color: #843825;
+    border-bottom: 2px solid #843825;
+    color: orange;
 }
 
 h1, h2, h3, h4, h5 {
@@ -112,7 +113,7 @@ h1, h2, h3, h4, h5 {
 }
 h1 {
     text-align: center;
-    margin-bottom:32px;
+    margin-bottom: 16px;
 }
 a {
     font-family: var(--header-font);
@@ -153,7 +154,7 @@ p {
         85% 100%,/* bottom-right */
         0 100%    /* bottom-left */
     );
-    transition: padding 0.25s ease;
+    transition: padding 0.20s ease;
     padding: 0 32px;
 }
 .social a:hover {
@@ -224,7 +225,7 @@ footer p {
     margin-left: 16px;
 }
 .discography img {
-    transition: .5s all;    
+    transition: .20s all;    
     box-shadow:none;
     width: 120px;
     margin-right: -80px;
@@ -281,6 +282,7 @@ body::-webkit-scrollbar-thumb {
     width: 112px;
     border-radius: 50%;
     margin: 0 auto;
+    margin-bottom: 8px;
 }
 #home-image.roll-away {
     transform: translateX(100%) rotate(720deg);
@@ -305,7 +307,7 @@ main {
         grid-template-columns: repeat(2, 1fr);
     }    
     .text-2col {
-    grid-template-columns: repeat(1, 1fr);
-}
+        grid-template-columns: repeat(1, 1fr);
+    }
 
 }
