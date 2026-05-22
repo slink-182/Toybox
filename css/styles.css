@@ -12,14 +12,14 @@
 
 :root {
     --primary-background: linear-gradient(180deg, #193222, #1b1932);
-    --nav-background: black;
-    --footer-background: black;
     --grayscale-background: linear-gradient(180deg, #404040, #000000);
     --firefly-background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
+    --nav-background: black;
+    --primary-text-color: aliceblue;
     --text-bubble-background: #56250d;
+    --footer-background: black;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     --header-font: "Bungee", sans-serif;
-    --primary-text-color: aliceblue;
 }
 
 * {
