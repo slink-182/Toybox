@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // CLICK POMNI FOR HONK-ACTION
     const fnaf_honk = new Audio("assets/audio/fnaf-honk.mp3")
-    const pomni_img = document.getElementById("pomni-img");
+    const ramona_img = document.getElementById("ramona-img");
     
-    pomni_img.addEventListener("click", () => {
+    ramona_img.addEventListener("click", () => {
         fnaf_honk.currentTime = 0;
         fnaf_honk.play();
     
