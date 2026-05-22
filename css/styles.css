@@ -14,10 +14,12 @@
     --primary-background: linear-gradient(180deg, #193222, #1b1932);
     --grayscale-background: linear-gradient(180deg, #404040, #000000);
     --firefly-background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
+    --scrollbar-thumb-color: linear-gradient(180deg, #842525, #844925);
+    --grayscale-scrollbar-thumb: linear-gradient(180deg, #7e7e7e, #8f8e8e);
     --nav-background: black;
-    --primary-text-color: aliceblue;
     --text-bubble-background: #56250d;
     --footer-background: black;
+    --primary-text-color: aliceblue;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     --header-font: "Bungee", sans-serif;
 }
@@ -40,12 +42,23 @@ body {
 body.grayscale {
     background: var(--grayscale-background);
 }
+body.grayscale-scrollbar-thumb::-webkit-scrollbar-thumb {
+    background: var(--grayscale-scrollbar-thumb)
+}
 .text-bubble.grayscale-text {
     background-color: #5c5c5c;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid #ffffff;
 }
 .social a.grayscale-socials {
     background-color: #898989;
+}
+.selected-page.grayscale-selected {
+    border-bottom: 2px solid #797979;
+    color: var(--primary-text-color);
+}
+.selected-page.grayscale-selected:hover {
+    border-bottom: 2px solid #797979;
+    color: black;
 }
 
 
@@ -270,7 +283,7 @@ body::-webkit-scrollbar {
     height:8px;
 }
 body::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #842525, #844925);
+    background: var(--scrollbar-thumb-color)
 }
 
 
