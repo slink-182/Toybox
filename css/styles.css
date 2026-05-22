@@ -93,7 +93,7 @@ nav a:nth-child(1) {
     clip-path: polygon(
         0 0, 
         100% 0,   /* top-right */
-        95% 100%,/* bottom-right */
+        93.33% 100%,/* bottom-right */
         0 100%    /* bottom-left */
     );
 }
@@ -102,10 +102,10 @@ nav a:hover {
     background-color: aliceblue;
     color: black;
 }
-main {
-    max-width: 800px;
-    margin: 0 auto;
+.selected-page {
+    color: #843825;
 }
+
 h1, h2, h3, h4, h5 {
     font-family: var(--header-font);
     margin: 0 8px 8px 8px;
@@ -263,6 +263,15 @@ footer p {
     margin: 16px 16px 32px 16px;
 }
 
+body::-webkit-scrollbar {
+    background-color:black;
+    width:8px;
+    height:8px;
+}
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #842525, #844925);
+}
+
 
  /* UNIQUE IDs */
 #home-image {
@@ -280,13 +289,21 @@ footer p {
 }
 
 
+/* MAIN */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
     /* center all the header text when screens are small */
     h2, h3, h4, h5 {
         text-align: center;
     }
-    /* despite being a 2 col class, columns are broke up to 1 because of how small the screen is */
+    .three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }    
     .text-2col {
     grid-template-columns: repeat(1, 1fr);
 }
