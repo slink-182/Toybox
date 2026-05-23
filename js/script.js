@@ -112,6 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
             fnaf_honk.play();
             total_clicks += 1;
             console.log(total_clicks);
+
+
+        if (total_clicks == 2) {
+            
+        }
         });
     }
 

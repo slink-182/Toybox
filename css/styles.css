@@ -94,6 +94,7 @@ nav {
     display: flex;
     background-color: var(--nav-background);
     line-height: 40px;
+    margin-bottom: 16px;
 }
 nav a {
     padding:0 20px;
@@ -207,16 +208,15 @@ footer a {
 .one-column {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    place-items:center;
-    margin: 16px;
-    gap: 16px;
+    place-items: center;
+    margin-bottom: 8px;
 }
 
 .medium-img {
     object-fit: cover;
     border-radius: 3%;
     max-width: 400px;
-    max-height:400px;
+    max-height: 400px;
 }
 
 .discography {
@@ -259,13 +259,13 @@ footer a {
     border: 2px solid orange; 
     border-radius:3%;  
     padding: 16px; 
-    margin: 16px 16px 32px 16px;
+    margin: 0 16px 32px;
 }
 
 body::-webkit-scrollbar {
     background-color:black;
-    width:8px;
-    height:8px;
+    width: 4px;
+    height: 4px;
 }
 body::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-color)
@@ -281,7 +281,7 @@ body::-webkit-scrollbar-thumb {
 #home-image {
     cursor: pointer;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    width: 168px;
+    max-width: 168px;
     border-radius: 50%;
     margin-bottom: 8px;
 }
@@ -316,6 +316,13 @@ main {
     .three-column {
         grid-template-columns: repeat(2, 1fr);
     }    
+    .text-bubble {
+        margin: 0 0 32px;
+        border-radius:0%;
+        border: 0px;
+        border-bottom:2px solid orange;
+    }
+
     .text-2col {
         grid-template-columns: repeat(1, 1fr);
     }
