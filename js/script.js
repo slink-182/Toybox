@@ -102,14 +102,25 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     
     // CLICK POMNI FOR HONK-ACTION
-    const fnaf_honk = new Audio("assets/audio/fnaf-honk.mp3")
+    const fnaf_honk = new Audio("assets/audio/fnaf-honk.mp3");
     const ramona_img = document.getElementById("ramona-img");
+    var total_clicks = 0;
     
-    ramona_img.addEventListener("click", () => {
-        fnaf_honk.currentTime = 0;
-        fnaf_honk.play();
-    
+    if (ramona_img) {
+        ramona_img.addEventListener("click", () => {
+            fnaf_honk.currentTime = 0;
+            fnaf_honk.play();
+            total_clicks += 1;
+            console.log(total_clicks);
+        });
+    }
+
+    // SET AS DARK THEME
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.body.classList.toggle("dark");
     });
+
+
 
 });
 

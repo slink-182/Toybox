@@ -11,6 +11,7 @@
 }
 
 :root {
+    --dark-background: black;
     --primary-background: linear-gradient(180deg, #193222, #1b1932);
     --grayscale-background: linear-gradient(180deg, #404040, #000000);
     --firefly-background: radial-gradient(circle, #fff8c6, #ffea00 40%, transparent 70%);
@@ -40,6 +41,10 @@ body {
 
 
 /* js applied classes */
+body.dark {
+    background: var(--dark-background);
+}
+
 body.grayscale {
     background: var(--grayscale-background);
 }
@@ -153,49 +158,30 @@ p {
 }
 
 
-/* SOCIAL */
-.social {
-    text-align: center;
-    line-height: 40px;
-    margin-bottom: 16px;
-}
-.social a {
-    clip-path: polygon(
-        15% 0,    /* top-left pulled inward */
-        100% 0,   /* top-right */
-        85% 100%,/* bottom-right */
-        0 100%    /* bottom-left */
-    );
-    transition: padding 0.20s ease;
-    padding: 0 32px;
-}
-.social a:hover {
-    background-color: white;
-    color: black;
-    padding-right: 64px;
-}
-.twitter {
-    background-color: #497b8f;
-}
-.pinterest {
-    background-color: #8f498a;
-}
-.youtube {
-    background-color: #8f4949;
-}
-.github {
-    background-color: #598f49;
-}
 
 /* FOOTER */
 footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--footer-background);
-    height: 200px;
-    line-height: 200px;
-    text-align: center;
+    text-align:center;
+    padding-top:16px;
+    margin-top:24px;
+   
 }
 footer p {
-    font-family: var(--header-font)
+    font-family: var(--header-font);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+}
+footer a {
+    display:block;
+    font-family: var(--header-font);
+    color: var(--primary-text-color);
+    border: 2px solid black;
+    cursor:pointer;
+    margin-bottom: 16px;
 }
 
 
@@ -287,13 +273,16 @@ body::-webkit-scrollbar-thumb {
 
 
  /* UNIQUE IDs */
+#welcome-img-container {
+    display:grid;
+    place-items: center;
+}
+
 #home-image {
-    display: block;
     cursor: pointer;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    width: 112px;
+    width: 168px;
     border-radius: 50%;
-    margin: 0 auto;
     margin-bottom: 8px;
 }
 #home-image.roll-away {
@@ -302,8 +291,10 @@ body::-webkit-scrollbar-thumb {
     pointer-events: none;
 }
 #sad-message {
-    margin-top:-56px; 
+    margin-bottom:-164px;
+    font: var(--header-font);
 }
+
 #ramona-img {
     cursor: pointer;
 }
@@ -327,6 +318,10 @@ main {
     }    
     .text-2col {
         grid-template-columns: repeat(1, 1fr);
+    }
+    footer {
+        grid-template-columns: 1fr;
+
     }
 
 }
