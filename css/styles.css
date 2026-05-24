@@ -127,7 +127,7 @@ nav a:hover {
 
 h1, h2, h3, h4, h5 {
     font-family: var(--header-font);
-    margin: 0 8px 8px 8px;
+    margin: 0 8px 8px;
 }
 h1 {
     text-align: center;
@@ -155,9 +155,8 @@ p {
 }
 .break {
     border-bottom: 2px solid var(--primary-text-color);
-    margin: 0 8px 32px 8px;
+    margin: 0 8px 32px;
 }
-
 
 
 /* FOOTER */
@@ -165,9 +164,9 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--footer-background);
-    text-align:center;
-    padding-top:16px;
-    margin-top:24px;
+    text-align: center;
+    padding-top: 16px;
+    margin-top: 24px;
    
 }
 footer p {
@@ -225,17 +224,14 @@ footer a {
 .discography img {
     transition: .20s all;    
     box-shadow:none;
-    width: 120px;
+    max-width: 120px;
     margin-right: -80px;
 }
 .discography img:hover {
     margin-right: 0px;
 }
 .img-circle {
-    object-fit:cover;
     border-radius: 50%;
-    width:400px;
-    height:400px;
 }
 
 /* typically text specific formats */
@@ -243,7 +239,7 @@ footer a {
     text-align: center;
 }
 .text-right {
-    text-align:right;
+    text-align: right;
 }
 .text-2col {
     display: grid;
@@ -252,7 +248,7 @@ footer a {
 .list-2col {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    gap:16px;
+    gap: 16px;
 }
 .text-bubble {
     background-color: var(--text-bubble-background);
@@ -282,7 +278,6 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     max-width: 168px;
-    border-radius: 50%;
     margin-bottom: 8px;
 }
 #home-image.roll-away {
